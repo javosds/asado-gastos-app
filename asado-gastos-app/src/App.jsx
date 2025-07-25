@@ -54,11 +54,12 @@ export default function App() {
   };
 
   const transactions = participants.length ? calculateSettlements() : [];
-  const shareText = encodeURIComponent("¡Usá esta app para dividir gastos! 💸 " + window.location.href);
+  const bitlyURL = "https://bit.ly/quien-puso-cuanto";
+  const shareText = encodeURIComponent("¿Quién puso cuánto? Dividí gastos fácil con tu grupo: " + bitlyURL);
 
   return (
     <div style={{ maxWidth: 600, margin: "2rem auto", fontFamily: "sans-serif", backgroundColor: "#f9f9f9", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}>
-      <h1 style={{ color: "#2d2d2d", textAlign: "center", marginBottom: "0.5rem" }}>¿Quién puso cuanto?</h1>
+      <h1 style={{ color: "#2d2d2d", textAlign: "center", marginBottom: "0.5rem" }}>¿Quién puso cuánto?</h1>
       <p style={{ color: "#555", textAlign: "center", marginBottom: "1rem" }}>{contextLabels[context]}</p>
 
       <div style={{ display: "flex", justifyContent: "center", marginBottom: "1rem" }}>
@@ -111,17 +112,17 @@ export default function App() {
         </ul>
       )}
 
-      <div style={{ display: "flex", gap: "0.5rem", justifyContent: "center", marginTop: "1.5rem" }}>
+      <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "center", marginTop: "1.5rem" }}>
         <a
           href={`https://wa.me/?text=${shareText}`}
           target="_blank"
           rel="noopener noreferrer"
           style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
         >
-          Compartir por WhatsApp
+          WhatsApp
         </a>
         <button
-          onClick={() => navigator.clipboard.writeText(https://bit.ly/quien-puso-cuanto)}
+          onClick={() => navigator.clipboard.writeText(bitlyURL)}
           style={{ backgroundColor: "#4b5563", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
         >
           Copiar link
