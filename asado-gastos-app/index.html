@@ -6,16 +6,16 @@
 
     <title>¿Quién puso cuánto?</title>
 
-    <!-- META TAGS para compartir -->
+    <!-- META TAGS para vista previa en redes -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="¿Quién puso cuánto?" />
     <meta property="og:description" content="Dividí gastos fácilmente con tus amigos: asado, juntadas, viajes y más." />
     <meta property="og:image" content="https://quien-puso-cuanto.vercel.app/og-image.jpg" />
     <meta property="og:url" content="https://quien-puso-cuanto.vercel.app" />
-    <meta property="fb:app_id" content="1234567890" />
+    <meta property="fb:app_id" content="" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Estilos básicos (opcional) -->
+    <!-- Estilos mínimos -->
     <style>
       body {
         margin: 0;
@@ -24,19 +24,18 @@
       }
     </style>
   </head>
-  
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-
-  <!-- Script de Cloudflare Web Analytics -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "e34ff55a-xxxx-xxxx-yyyy-yyyyyyyy"}'></script>
-</body>
-
-
 
   <body>
     <div id="root"></div>
+
+    <!-- Script principal de React -->
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Cloudflare Web Analytics (PEGA TU TOKEN AQUÍ) -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "e34ff55a-xxxx-xxxx-yyyy-yyyyyyyy"}'>
+    </script>
   </body>
 </html>
