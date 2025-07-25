@@ -54,8 +54,7 @@ export default function App() {
   };
 
   const transactions = participants.length ? calculateSettlements() : [];
-  const currentURL = encodeURIComponent(window.location.href);
-  const shareText = encodeURIComponent("¿Quién puso cuánto? Dividí gastos fácil con tu grupo: " + window.location.href);
+  const shareText = encodeURIComponent("¡Usá esta app para dividir gastos! 💸 " + window.location.href);
 
   return (
     <div style={{ maxWidth: 600, margin: "2rem auto", fontFamily: "sans-serif", backgroundColor: "#f9f9f9", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}>
@@ -112,30 +111,14 @@ export default function App() {
         </ul>
       )}
 
-      <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "center", marginTop: "1.5rem" }}>
+      <div style={{ display: "flex", gap: "0.5rem", justifyContent: "center", marginTop: "1.5rem" }}>
         <a
           href={`https://wa.me/?text=${shareText}`}
           target="_blank"
           rel="noopener noreferrer"
           style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
         >
-          WhatsApp
-        </a>
-        <a
-          href={`https://twitter.com/intent/tweet?text=${shareText}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ backgroundColor: "#1DA1F2", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
-        >
-          Twitter
-        </a>
-        <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=${currentURL}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ backgroundColor: "#1877F2", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
-        >
-          Facebook
+          Compartir por WhatsApp
         </a>
         <button
           onClick={() => navigator.clipboard.writeText(window.location.href)}
