@@ -121,7 +121,7 @@ export default function App() {
           Compartir por WhatsApp
         </a>
         <button
-          onClick={() => navigator.clipboard.writeText(window.location.href)}
+          onClick={() => navigator.clipboard.writeText(https://bit.ly/quien-puso-cuanto)}
           style={{ backgroundColor: "#4b5563", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
         >
           Copiar link
