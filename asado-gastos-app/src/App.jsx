@@ -57,6 +57,26 @@ export default function App() {
   const bitlyURL = "https://bit.ly/quien-puso-cuanto";
   const shareText = encodeURIComponent("¿Quién puso cuánto? Dividí gastos fácil con tu grupo: " + bitlyURL);
 
+  const getSummaryText = () => {
+    let text = "Resumen de gastos y transferencias:\n\n";
+    participants.forEach(p => {
+      text += `- ${p.name} aportó $${p.amount.toFixed(2)}\n`;
+    });
+    if (transactions.length) {
+      text += "\nTransferencias sugeridas:\n";
+      transactions.forEach(t => {
+        text += `- ${t.from} debe transferir $${t.amount} a ${t.to}\n`;
+      });
+    } else {
+      text += "\nTodos están saldados o falta data.\n";
+    }
+    return text;
+  };
+
+  const copySummary = () => {
+    navigator.clipboard.writeText(getSummaryText());
+  };
+
   return (
     <div style={{ maxWidth: 600, margin: "2rem auto", fontFamily: "sans-serif", backgroundColor: "#f9f9f9", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}>
       <h1 style={{ color: "#2d2d2d", textAlign: "center", marginBottom: "0.5rem" }}>¿Quién puso cuánto?</h1>
@@ -119,13 +139,19 @@ export default function App() {
           rel="noopener noreferrer"
           style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
         >
-          Compartir App por WhatsApp
+          WhatsApp
         </a>
         <button
           onClick={() => navigator.clipboard.writeText(bitlyURL)}
           style={{ backgroundColor: "#4b5563", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
         >
           Copiar link
+        </button>
+        <button
+          onClick={copySummary}
+          style={{ backgroundColor: "#10b981", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
+        >
+          Copiar resumen
         </button>
       </div>
     </div>
