@@ -8,6 +8,8 @@ export default function App() {
 
   // const contextLabels = { ... }; // Eliminado porque ya no se usa
 
+  
+  
   const addParticipant = () => {
     if (name && amount) {
       setParticipants([...participants, { name, amount: parseFloat(amount) }]);
@@ -74,6 +76,7 @@ Todos están saldados o falta data.
 ";
     }
     return text;
+  };
   };
 
   const copySummary = () => {
