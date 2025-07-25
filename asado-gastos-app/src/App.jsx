@@ -132,26 +132,29 @@ export default function App() {
         </ul>
       )}
 
-      <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "center", marginTop: "1.5rem" }}>
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: "1rem" }}>
+        <button
+          onClick={copySummary}
+          style={{ backgroundColor: "#999", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
+        >
+          Copiar resumen
+        </button>
+      </div>
+
+      <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "center" }}>
         <a
           href={`https://wa.me/?text=${shareText}`}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
+          style={{ backgroundColor: "#999", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
         >
-          WhatsApp
+          📲 Compartir app en WhatsApp
         </a>
         <button
           onClick={() => navigator.clipboard.writeText(bitlyURL)}
-          style={{ backgroundColor: "#4b5563", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
+          style={{ backgroundColor: "#999", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
         >
           Copiar link
-        </button>
-        <button
-          onClick={copySummary}
-          style={{ backgroundColor: "#10b981", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
-        >
-          Copiar resumen
         </button>
       </div>
     </div>
