@@ -119,7 +119,7 @@ export default function App() {
           rel="noopener noreferrer"
           style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
         >
-          WhatsApp
+          Compartir por WhatsApp
         </a>
         <button
           onClick={() => navigator.clipboard.writeText(bitlyURL)}
