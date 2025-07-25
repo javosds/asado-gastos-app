@@ -61,16 +61,7 @@ export default function App() {
 Transferencias sugeridas:
 
 ";
-"
-Transferencias sugeridas:
-
-";
-"
-Transferencias sugeridas:
-
-";
-      transactions.forEach(t => {
-        text += `- ${t.from} debe transferir $${t.amount} a ${t.to}\n`;
+`- ${t.from} debe transferir $${t.amount} a ${t.to}\n`;
       });
     } else {
       text += "\nTodos están saldados o falta data.\n";
