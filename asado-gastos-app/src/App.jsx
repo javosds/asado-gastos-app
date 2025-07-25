@@ -45,6 +45,8 @@ export default function App() {
   };
 
   const transactions = participants.length ? calculateSettlements() : [];
+  const currentURL = encodeURIComponent(window.location.href);
+  const shareText = encodeURIComponent("¡Usá esta app para dividir gastos del asado! 🍖 " + window.location.href);
 
   return (
     <div style={{ maxWidth: 600, margin: "2rem auto", fontFamily: "sans-serif", backgroundColor: "#f9f9f9", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}>
@@ -80,7 +82,7 @@ export default function App() {
       {transactions.length === 0 ? (
         <p style={{ color: "#777" }}>Todos están saldados o falta data.</p>
       ) : (
-        <ul style={{ paddingLeft: "1rem" }}>
+        <ul style={{ paddingLeft: "1rem", marginBottom: "1rem" }}>
           {transactions.map((t, i) => (
             <li key={i} style={{ marginBottom: "4px" }}>
               <span style={{ color: "#ef4444" }}>{t.from}</span> debe enviar <strong>$ {t.amount}</strong> a <span style={{ color: "#3b82f6" }}>{t.to}</span>
@@ -88,6 +90,23 @@ export default function App() {
           ))}
         </ul>
       )}
+
+      <div style={{ display: "flex", gap: "0.5rem", justifyContent: "center", marginTop: "1.5rem" }}>
+        <a
+          href={`https://wa.me/?text=${shareText}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
+        >
+          📲 Compartir por WhatsApp
+        </a>
+        <button
+          onClick={() => navigator.clipboard.writeText(window.location.href)}
+          style={{ backgroundColor: "#4b5563", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
+        >
+          📋 Copiar link
+        </button>
+      </div>
     </div>
   );
 }
