@@ -63,7 +63,10 @@ export default function App() {
       text += `- ${p.name} aportó $${p.amount.toFixed(2)}\n`;
     });
     if (transactions.length) {
-      text += "\nTransferencias sugeridas:\n";
+      text += "
+Transferencias sugeridas:
+
+";
       transactions.forEach(t => {
         text += `- ${t.from} debe transferir $${t.amount} a ${t.to}\n`;
       });
