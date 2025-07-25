@@ -65,6 +65,10 @@ Transferencias sugeridas:
 Transferencias sugeridas:
 
 ";
+"
+Transferencias sugeridas:
+
+";
       transactions.forEach(t => {
         text += `- ${t.from} debe transferir $${t.amount} a ${t.to}\n`;
       });
@@ -137,7 +141,7 @@ Transferencias sugeridas:
 
       <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "center" }}>
         <a
-          href={`https://wa.me/?text=${shareText}`}
+          href={`https://wa.me/?text=${shareText}`} onClick={() => console.log("Texto compartido:", decodeURIComponent(shareText))}
           target="_blank"
           rel="noopener noreferrer"
           style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
