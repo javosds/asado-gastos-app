@@ -4,6 +4,15 @@ export default function App() {
   const [participants, setParticipants] = useState([]);
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
+  const [context, setContext] = useState("general");
+
+  const contextLabels = {
+    general: "Dividí gastos con tu grupo de forma rápida",
+    viaje: "Ideal para viajes compartidos",
+    asado: "Perfecta para organizar el asado",
+    cumple: "Usala para regalos grupales de cumpleaños",
+    previa: "Dividí gastos de la previa sin líos"
+  };
 
   const addParticipant = () => {
     if (name && amount) {
@@ -45,12 +54,23 @@ export default function App() {
   };
 
   const transactions = participants.length ? calculateSettlements() : [];
-  const currentURL = encodeURIComponent(window.location.href);
-  const shareText = encodeURIComponent("¡Usá esta app para dividir gastos del asado! 🍖 " + window.location.href);
+  const shareText = encodeURIComponent("¡Usá esta app para dividir gastos! 💸 " + window.location.href);
 
   return (
     <div style={{ maxWidth: 600, margin: "2rem auto", fontFamily: "sans-serif", backgroundColor: "#f9f9f9", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}>
-      <h1 style={{ color: "#2d2d2d", textAlign: "center" }}>🔥 Divisor de gastos de asado</h1>
+      <h1 style={{ color: "#2d2d2d", textAlign: "center", marginBottom: "0.5rem" }}>¿Quién puso cuánto?</h1>
+      <p style={{ color: "#555", textAlign: "center", marginBottom: "1rem" }}>{contextLabels[context]}</p>
+
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: "1rem" }}>
+        <select value={context} onChange={e => setContext(e.target.value)} style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }}>
+          <option value="general">General</option>
+          <option value="viaje">Viaje</option>
+          <option value="asado">Asado</option>
+          <option value="cumple">Cumpleaños</option>
+          <option value="previa">Previa</option>
+        </select>
+      </div>
+
       <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem" }}>
         <input
           placeholder="Nombre"
@@ -73,19 +93,19 @@ export default function App() {
       <ul style={{ paddingLeft: "1rem", marginBottom: "1.5rem" }}>
         {participants.map((p, i) => (
           <li key={i} style={{ marginBottom: "4px" }}>
-            <strong>{p.name}</strong> gastó <span style={{ color: "#16a34a" }}>$ {p.amount.toFixed(2)}</span>
+            <strong>{p.name}</strong> aportó <span style={{ color: "#16a34a" }}>$ {p.amount.toFixed(2)}</span>
           </li>
         ))}
       </ul>
 
-      <h2 style={{ color: "#444", marginBottom: "0.5rem" }}>💸 Transferencias sugeridas</h2>
+      <h2 style={{ color: "#444", marginBottom: "0.5rem" }}>📊 Transferencias sugeridas</h2>
       {transactions.length === 0 ? (
         <p style={{ color: "#777" }}>Todos están saldados o falta data.</p>
       ) : (
         <ul style={{ paddingLeft: "1rem", marginBottom: "1rem" }}>
           {transactions.map((t, i) => (
             <li key={i} style={{ marginBottom: "4px" }}>
-              <span style={{ color: "#ef4444" }}>{t.from}</span> debe enviar <strong>$ {t.amount}</strong> a <span style={{ color: "#3b82f6" }}>{t.to}</span>
+              <span style={{ color: "#ef4444" }}>{t.from}</span> debe transferir <strong>$ {t.amount}</strong> a <span style={{ color: "#3b82f6" }}>{t.to}</span>
             </li>
           ))}
         </ul>
@@ -98,13 +118,13 @@ export default function App() {
           rel="noopener noreferrer"
           style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
         >
-          📲 Compartir por WhatsApp
+          Compartir por WhatsApp
         </a>
         <button
           onClick={() => navigator.clipboard.writeText(window.location.href)}
           style={{ backgroundColor: "#4b5563", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
         >
-          📋 Copiar link
+          Copiar link
         </button>
       </div>
     </div>
