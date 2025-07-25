@@ -78,7 +78,7 @@ export default function App() {
       
 
       <p style={{ textAlign: "center", marginBottom: "1rem", color: "#444" }}>
-        Usá esta app para dividir fácilmente los gastos de un asado, una juntada con amigos, un viaje, un cumpleaños o cualquier situación donde todos aportan algo.
+        Usá esta app para dividir fácilmente los gastos de un asado, una juntada con amigos, un viaje, etc...
       </p>
 
       <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem" }}>
