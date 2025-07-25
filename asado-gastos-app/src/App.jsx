@@ -78,6 +78,7 @@ Todos están saldados o falta data.
     return text;
   };
   };
+  };
 
   const copySummary = () => {
     navigator.clipboard.writeText(getSummaryText());
