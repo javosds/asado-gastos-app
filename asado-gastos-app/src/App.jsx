@@ -134,8 +134,7 @@ export default function App() {
 
       <div style={{ display: "flex", justifyContent: "center", marginBottom: "1rem" }}>
         <button
-          onClick={copySummary}
-          style={{ backgroundColor: "#999", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
+          onClick={copySummary} style={{ padding: "0.5rem 1rem", backgroundColor: "#3b82f6", color: "white", border: "none", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
         >
           Copiar resumen
         </button>
@@ -146,7 +145,7 @@ export default function App() {
           href={`https://wa.me/?text=${shareText}`}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ backgroundColor: "#999", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
+          style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
         >
           📲 Compartir app en WhatsApp
         </a>
