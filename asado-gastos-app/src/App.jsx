@@ -48,8 +48,8 @@ export default function App() {
   };
 
   const transactions = participants.length ? calculateSettlements() : [];
-  const bitlyURL = "https://bit.ly/quien-puso-cuanto";
-  const shareText = encodeURIComponent("¿Quién puso cuánto? Dividí gastos fácil con tu grupo: " + bitlyURL);
+  // const bitlyURL = eliminado
+  const shareText = encodeURIComponent("¿Quién puso cuánto? Dividí gastos fácil con tu grupo: https://quien-puso-cuanto.vercel.app");
 
   const getSummaryText = () => {
     let text = "Resumen de gastos y transferencias:\n\n";
@@ -57,8 +57,14 @@ export default function App() {
       text += `- ${p.name} aportó $${p.amount.toFixed(2)}\n`;
     });
     if (transactions.length) {
-  text += "\nTransferencias sugeridas:\n\n";
+    text += "
+Transferencias sugeridas:
 
+";
+"
+Transferencias sugeridas:
+
+";
       transactions.forEach(t => {
         text += `- ${t.from} debe transferir $${t.amount} a ${t.to}\n`;
       });
@@ -138,12 +144,7 @@ export default function App() {
         >
           📲 Compartir app en WhatsApp
         </a>
-        <button
-          onClick={() => navigator.clipboard.writeText(bitlyURL)}
-          style={{ backgroundColor: "#999", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}
-        >
-          Copiar link
-        </button>
+        
       </div>
     </div>
   );
