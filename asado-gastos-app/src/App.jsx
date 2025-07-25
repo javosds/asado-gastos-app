@@ -6,13 +6,7 @@ export default function App() {
   const [amount, setAmount] = useState("");
   const [context, setContext] = useState("general");
 
-  const contextLabels = {
-    general: "Dividí gastos con tu grupo de forma rápida",
-    viaje: "Ideal para viajes compartidos",
-    asado: "Perfecta para organizar el asado",
-    cumple: "Usala para regalos grupales de cumpleaños",
-    previa: "Dividí gastos de la previa sin líos"
-  };
+  // const contextLabels = { ... }; // Eliminado porque ya no se usa
 
   const addParticipant = () => {
     if (name && amount) {
@@ -83,17 +77,11 @@ Transferencias sugeridas:
   return (
     <div style={{ maxWidth: 600, margin: "2rem auto", fontFamily: "sans-serif", backgroundColor: "#f9f9f9", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}>
       <h1 style={{ color: "#2d2d2d", textAlign: "center", marginBottom: "0.5rem" }}>¿Quién puso cuánto?</h1>
-      <p style={{ color: "#555", textAlign: "center", marginBottom: "1rem" }}>{contextLabels[context]}</p>
+      
 
-      <div style={{ display: "flex", justifyContent: "center", marginBottom: "1rem" }}>
-        <select value={context} onChange={e => setContext(e.target.value)} style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }}>
-          <option value="general">General</option>
-          <option value="viaje">Viaje</option>
-          <option value="asado">Asado</option>
-          <option value="cumple">Cumpleaños</option>
-          <option value="previa">Previa</option>
-        </select>
-      </div>
+      <p style={{ textAlign: "center", marginBottom: "1rem", color: "#444" }}>
+        Usá esta app para dividir fácilmente los gastos de un asado, una juntada con amigos, un viaje, un cumpleaños o cualquier situación donde todos aportan algo.
+      </p>
 
       <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem" }}>
         <input
