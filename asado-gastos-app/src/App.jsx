@@ -58,7 +58,7 @@ export default function App() {
 
   return (
     <div style={{ maxWidth: 600, margin: "2rem auto", fontFamily: "sans-serif", backgroundColor: "#f9f9f9", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}>
-      <h1 style={{ color: "#2d2d2d", textAlign: "center", marginBottom: "0.5rem" }}>¿Quién puso cuánto?</h1>
+      <h1 style={{ color: "#2d2d2d", textAlign: "center", marginBottom: "0.5rem" }}>¿Quién puso cuanto?</h1>
       <p style={{ color: "#555", textAlign: "center", marginBottom: "1rem" }}>{contextLabels[context]}</p>
 
       <div style={{ display: "flex", justifyContent: "center", marginBottom: "1rem" }}>
