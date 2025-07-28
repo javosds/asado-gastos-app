@@ -76,6 +76,7 @@ Todos están saldados o falta data.
 ";
     }
     return text;
+  };
 
   };
 
