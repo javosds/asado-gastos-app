@@ -111,17 +111,18 @@ export default function App() {
         </ul>
       )}
 
-      <div style={{ display: "flex", justifyContent: "center", marginBottom: "1rem" }}>
-        <a href={`https://wa.me/?text=${encodeURIComponent('¡Usá esta app para dividir gastos con tu grupo! 🙌\n\nhttps://quien-puso-cuanto.vercel.app')}`} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: "#4b5563", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}>
-          📢 Compartir aplicación con tus amigos
-        </a>
-      </div>
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.5rem" }}>
+  <a href={`https://wa.me/?text=${encodeURIComponent(getSummaryText())}`} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}>
+    📲 Compartir resumen por WhatsApp
+  </a>
+</div>
 
-      <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "center" }}>
-        <a href={`https://wa.me/?text=${encodeURIComponent(getSummaryText())}`} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}>
-          📲 Compartir resumen por WhatsApp
-        </a>
-      </div>
+<div style={{ display: "flex", justifyContent: "center", marginBottom: "2rem" }}>
+  <a href={`https://wa.me/?text=${encodeURIComponent('¡Usá esta app para dividir gastos con tu grupo! 🙌\n\nhttps://quien-puso-cuanto.vercel.app')}`} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: "#4b5563", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}>
+    📢 Compartir aplicación con tus amigos
+  </a>
+</div>
+
     </div>
   );
 }
