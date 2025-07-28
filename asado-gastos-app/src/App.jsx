@@ -54,9 +54,21 @@ export default function App() {
   const shareText = encodeURIComponent("¿Quién puso cuánto? Dividí gastos fácil con tu grupo: https://quien-puso-cuanto.vercel.app");
 
   const getSummaryText = () => {
-  let text = "Resumen de gastos y transferencias:
+  let text = "Resumen de gastos y transferencias:\n\n";
+  participants.forEach(p => {
+    text += `- ${p.name} aportó $${p.amount.toFixed(2)}\n`;
+  });
+  if (transactions.length) {
+    text += "\nTransferencias sugeridas:\n\n";
+    transactions.forEach(t => {
+      text += `- ${t.from} debe transferir $${t.amount} a ${t.to}\n`;
+    });
+  } else {
+    text += "\nTodos están saldados o falta data.\n";
+  }
+  return text;
+};
 
-";
   participants.forEach(p => {
     text += `- ${p.name} aportó $${p.amount.toFixed(2)}
 `;
@@ -77,11 +89,6 @@ Todos están saldados o falta data.
   }
   return text;
 };
-  };
-const getSummaryText = () => {
-  let text = "Resumen de gastos y transferencias:\n\n";
-
-  };
 
   
 
