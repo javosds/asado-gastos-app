@@ -114,13 +114,13 @@ export default function App() {
           📲 Compartir resumen por WhatsApp
         </a>
       </div>
+      
       <div style={{ display: "flex", justifyContent: "center", marginBottom: "1rem" }}>
         <a href="https://quien-puso-cuanto.vercel.app" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: "#4b5563", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}>
           📢 Compartir aplicación con tus amigos
         </a>
       </div>
 
-      
     </div>
   );
 }
