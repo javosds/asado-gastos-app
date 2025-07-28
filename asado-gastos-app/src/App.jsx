@@ -141,14 +141,7 @@ Todos están saldados o falta data.
       </div>
 
       <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "center" }}>
-        <a
-          href={`https://wa.me/?text=${shareText}`} onClick={() => console.log("Texto compartido:", decodeURIComponent(shareText))}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}
-        >
-          📲 Compartir app en WhatsApp
-        </a>
+        <a href={`https://wa.me/?text=${encodeURIComponent(getSummaryText())}`} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: "#25D366", color: "white", padding: "0.5rem 1rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold" }}>📲 Compartir resumen por WhatsApp</a>
         
       </div>
     </div>
