@@ -81,9 +81,22 @@ Todos están saldados o falta data.
 
   };
 
-  const copySummary = () => {
-    navigator.clipboard.writeText(getSummaryText());
-  };
+  const getSummaryText = () => {
+  let text = "Resumen de gastos y transferencias:\n\n";
+  participants.forEach(p => {
+    text += `- ${p.name} aportó $${p.amount.toFixed(2)}\n`;
+  });
+  if (transactions.length) {
+    text += "\nTransferencias sugeridas:\n\n";
+    transactions.forEach(t => {
+      text += `- ${t.from} debe transferir $${t.amount} a ${t.to}\n`;
+    });
+  } else {
+    text += "\nTodos están saldados o falta data.\n";
+  }
+  return text;
+};
+
 
   return (
     <div style={{ maxWidth: 600, margin: "2rem auto", fontFamily: "sans-serif", backgroundColor: "#f9f9f9", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)" }}>
