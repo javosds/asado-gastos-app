@@ -123,6 +123,10 @@ export default function App() {
   </a>
 </div>
 
+<p style={{ textAlign: "center", color: "#777", marginTop: "2rem" }}>
+  ¿Te gustó la app? ¡Invitale un cafecito a los desarrolladores!
+</p>
+
     <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
   <a href="https://cafecito.app/quienpusocuanto" target="_blank" rel="noopener noreferrer">
     <img src="https://cdn.cafecito.app/imgs/buttons/button_1.svg" alt="Invitame un café en cafecito.app" />
